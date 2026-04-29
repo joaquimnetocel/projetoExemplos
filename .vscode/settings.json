@@ -1,20 +1,17 @@
 {
-	// CONFIGURAÇÕES PARA FORMATAÇÃO DE CÓDIGO:
-	"editor.defaultFormatter": "esbenp.prettier-vscode", // PRETTIER COMO FORMATADOR PADRÃO.
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[svelte]": {
-		"editor.defaultFormatter": "svelte.svelte-vscode" // FORMATADOR PARA ARQUIVOS SVELTE.
+		"editor.defaultFormatter": "svelte.svelte-vscode"
 	},
-	"svelte.enable-ts-plugin": true, // CONFIGURAÇÃO DO 'SVELTE FOR VS CODE' PARA TYPESCRIPT INTELLISENSE EM ARQUIVOS SVELTE.
-	"editor.formatOnSave": true, // FORMATAR AO SALVAR.
+	"svelte.enable-ts-plugin": true,
+	"editor.formatOnSave": true,
 	"editor.codeActionsOnSave": {
-		"source.sortImports": "explicit" // ORDENAÇÃO DOS IMPORTS AO SALVAR.
+		"source.sortImports": "explicit"
 	},
-	/////
-	// CONFIGURAÇÕES DO LINTER:
-	"eslint.validate": ["javascript", "svelte"], // UM ARRAY COM AS LINGUAGENS QUE SERÃO VALIDADAS PELO ESLINT.
+	"eslint.validate": ["javascript", "svelte"],
 	"files.associations": {
-		"*.json": "jsonc", // HABILITA COMENTÁRIOS EM ARQUIVOS JSON.
-		"*.svelte.ts": "typescript" // TRATAR ARQUIVOS .svelte.ts COMO ARQUIVOS TYPESCRIPT
+		"*.json": "jsonc",
+		"*.svelte.ts": "typescript",
+		"*.css": "tailwindcss"
 	}
-	/////
 }

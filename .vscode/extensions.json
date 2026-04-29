@@ -5,6 +5,11 @@
 		"natqe.reload",
 		"formulahendry.auto-rename-tag",
 		"dbaeumer.vscode-eslint",
-		"dbaeumer.vscode-eslint"
+		"dbaeumer.vscode-eslint",
+		"bradlc.vscode-tailwindcss",
+		"heybourn.headwind",
+		"csstools.postcss",
+		"stivo.tailwind-fold",
+		"chanzhaoyu.svelte-5-snippets"
 	]
 }
