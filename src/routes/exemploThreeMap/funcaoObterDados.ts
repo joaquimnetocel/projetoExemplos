@@ -1,6 +1,6 @@
-import { query } from '$app/server';
+import { type typeTreeMap } from './typeTreeMap';
 
-export const obterDados = query(async () => {
+export const funcaoObterDados = async (): Promise<typeTreeMap[]> => {
 	const dados = await fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json');
 	const dadosemformatojson: { powerstats: { speed: number }; name: string }[] = await dados.json();
 
@@ -12,4 +12,4 @@ export const obterDados = query(async () => {
 	});
 
 	return resultados;
-});
+};

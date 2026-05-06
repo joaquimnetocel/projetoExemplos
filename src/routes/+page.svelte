@@ -1,22 +1,9 @@
 <script lang="ts">
-	import { obterDados } from './obterDados';
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	let estado = $state<any[]>();
-
-	$effect(() => {
-		(async function () {
-			estado = await obterDados();
-		})();
-	});
+	import { resolve } from '$app/paths';
 </script>
 
-{#if estado}
-	<div>
-		{#each estado as estadoatual (estadoatual.id)}
-			<!-- <img src={estadoatual.images.xs} alt="aaaa" /> -->
-			<div>
-				{estadoatual.name}
-			</div>
-		{/each}
-	</div>
-{/if}
+<ul class="list-disc pl-5">
+	<li><a class="text-blue-500" href={resolve('/exemploThreeMap')}>EXEMPLO THREEMAP</a></li>
+	<li><a class="text-blue-500" href={resolve('/exemploLoadFunction')}>EXEMPLO LOAD FUNCTION</a></li>
+	<li><a class="text-blue-500" href={resolve('/exemploFuncaoRemota')}>EXEMPLO FUNÇÃO REMOTA</a></li>
+</ul>

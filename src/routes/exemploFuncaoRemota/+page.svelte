@@ -4,4 +4,8 @@
 	let estado = $state(await obterDadosRemota());
 </script>
 
-{estado[0].name}
+{#each estado as resultadoatual, i (i)}
+	<div>
+		{resultadoatual.name}
+	</div>
+{/each}

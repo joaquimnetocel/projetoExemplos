@@ -1,22 +1,20 @@
 <script lang="ts">
 	import ApexCharts, { type ApexOptions } from 'apexcharts';
-	import { obterDados } from './obterdados';
+	import { funcaoObterDados } from './funcaoObterDados';
+	import { type typeTreeMap } from './typeTreeMap';
 
-	let chartElement: HTMLDivElement;
-
-	let chart: ApexCharts;
-
-	let dados = $state<{ x: string; y: number }[]>([]);
+	let chartElement = $state<HTMLDivElement>();
+	let chart = $state<ApexCharts>();
+	let dados = $state<typeTreeMap[]>([]);
 
 	$effect(() => {
-		async function carregar() {
-			dados = await obterDados();
-			renderizarGrafico();
-		}
-		carregar();
+		(async function () {
+			dados = await funcaoObterDados();
+			funcaoRenderizarGrafico();
+		})();
 	});
 
-	function renderizarGrafico() {
+	function funcaoRenderizarGrafico() {
 		const options: ApexOptions = {
 			series: [
 				{
@@ -51,13 +49,4 @@
 	}
 </script>
 
-<div bind:this={chartElement}></div>
-
-<style>
-	div {
-		width: 100%;
-		background: #fff;
-		padding: 1rem;
-		border-radius: 8px;
-	}
-</style>
+<div class="w-full rounded-lg bg-white p-4" bind:this={chartElement}></div>
